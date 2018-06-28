@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HYF calculator homework</title> 
+</head>
+
+<style>
+  body{
+    box-sizing: border-box;
+  }
+  h1{
+    padding: 10px;
+    border: green solid 5px;
+    text-align: center;
+    color: green;
+    width: 50%;
+    margin: 10px auto;
+    font-size: 20px;
+  }
+  h3{
+    padding: 10px;
+    border: green solid 5px;
+    color: rgb(52, 106, 177);
+    width: 50%;
+    margin: 10px auto;
+  }
+  p{
+    color: red;
+  }
+  .car-color{
+    display: flex;
+  }
+
+</style>
+
+<body>
+    <h1 id="result"></h1>
+    <div style="margin: auto; width: 50%;">
+      <input type="text"  placeholder="Enter the color" id="color" >
+      <button onclick="carColor()" style="float: right;">Car's Color</button>
+    </div>
+    <h1 id="colorResult"></h1>
+    <h3 id="object"></h3>
+    <h1 id="vehicle"></h1>
+    <h1 id="if-statement"></h1>
+    <h1 id="advertisement"></h1>
+    <h1 id="objectTeachers"></h1>
+    <h1 id="objectLanguages"></h1>
+
+ 
+<script>
+//Functions
+//Add 3 numbers function
+function addNumbers(x,y,z){
+    var result=x+y+z;
+    return result;
+}
+document.getElementById("result").innerHTML=addNumbers(2,3,4);
+
+// Return the car's color function
+function carColor(){
+  color1=document.getElementById('color').value;
+  document.getElementById("colorResult").innerHTML=color1+" Car";
+}
+
+
+//Object
+//Define an object
+var someObject1= {
+name:'Mohammed',
+age:36,
+married:true,
+Children:'Yes'};
+logObject(someObject1);
+// create a function to print the object's properties and values
+function logObject(someObject){
+  var result='';
+  for(var i in someObject){
+    result+="someObject"+"."+ i +"="+someObject[i]+'<br>';
+    document.getElementById('object').innerHTML=result;
+  }
+}
+//Write If statement
+document.getElementById('if-statement').innerHTML=(3==="3")?"Yes":"No";
+console.log((3===3)?"Yes":"No");
+//Add a list of vehicles 
+function vehicleType(color,type,age)
+{
+  var vehicle =['car','motobike','wagon','bike'];
+      if(age==0)
+      document.getElementById('vehicle').innerHTML="a "+color+" new "+vehicle[type];
+      else 
+      document.getElementById('vehicle').innerHTML="a "+color+" used "+vehicle[type];
+      
+      var advResult='Amazing Joe\'s Garage, we service ';
+      console.log(vehicle.length);
+      //Add a new item and i don't need to change the code
+      vehicle.push("caravan");
+      //Write an advertisement
+      for(var index=0;index<vehicle.length;index++)
+        if(index==vehicle.length-1)
+          advResult+=vehicle[index]+ '.';
+        else if (index==vehicle.length-2)
+          advResult+=vehicle[index]+" and ";  
+        else
+          advResult+=vehicle[index]+'\, ';
+
+      document.getElementById('advertisement').innerHTML=advResult;
+
+}
+//call the function
+vehicleType("Red",3,0);
+
+//create object
+var hyfObject={};
+//add properties and values to the object
+hyfObject={teachersModule1:"Nick, Miet, Tiago",teachersModule2:"Claudio, Rob"};
+document.getElementById('objectTeachers').innerHTML="Module1 Teachers: "+hyfObject.teachersModule1+'<br>'+"Module2 Teachers: "+hyfObject.teachersModule2;
+//add new property to the object;
+hyfObject.languages="Html, Css, JavaScript";
+document.getElementById('objectLanguages').innerHTML="Languages: "+hyfObject.languages;
+
+//Check the quality of the arrays
+let x=[1,2,3];
+let y=[1,2,3];
+let z=x;
+console.log((x==y)?'Equal':'Not Equal');  //Not Equal
+console.log((x===y)?'Equal':'Not Equal'); //Not Equal
+console.log((x==z)?'Equal':'Not Equal');  //Equal
+console.log((x===z)?'Equal':'Not Equal'); //Equal
+console.log('x= '+x);
+console.log('y= '+y);
+console.log('z= '+z);
+
+//Compare Objects
+let o1 = { foo: 'bar' };
+let o2 = { foo: 'bar' };
+let o3 = o2;
+console.log((o1==o2)?'Equal':'Not Equal');
+console.log((o3===o2)?'Equal':'Not Equal');
+  
+  let bar = 42;
+  console.log(typeof typeof bar); //type of 42 is number and type of 'Number' is String  
+</script>
+ </body>
